@@ -1,0 +1,93 @@
+create table clientes(
+    id int primary key, 
+	nome varchar(100),
+	cpf int,
+	cidade varchar(100)
+);
+
+create table veiculos(
+    id int primary key,
+	modelo varchar(30),
+	placa varchar(7),
+	diaria real
+);
+create table locacoes(
+	id int primary key,
+	cliente_id int,
+	veiculo_id int,
+	data_retirada date,
+	data_devolucao date,
+	valor_total real,
+	foreign key (cliente_id) references clientes(id),
+	foreign key (veiculo_id) references veiculos(id)
+);
+
+INSERT INTO clientes (id,nome, cpf, cidade) VALUES
+(1,'Ana Silva', 123456789, 'Campo Grande'),
+(2,'Bruno Santos', 234567890, 'Dourados'),
+(3,'Aderbal Oliveira', 345678901, 'Três Lagoas'),
+(4,'Diego Souza', 456789012, 'Corumbá'),
+(5,'Sansão Lima', 567890123, 'Aquidauana'),
+(6,'Biga Costa', 678901234, 'Bonito'),
+(7,'Gabriela Alves', 789012345, 'Ponta Porã'),
+(8,'Jair Lul Pereira', 890123456, 'Naviraí'),
+(9,'Saturnino Rocha', 901234567, 'Maracaju'),
+(10,'João Martins', 012345678, 'Sidrolândia');
+
+
+INSERT INTO veiculos (id,modelo, placa, diaria) VALUES
+(11,'Fiat Argo', 'ABC1234', 120),
+(22,'Chevrolet Onix', 'DEF5678', 140),
+(33,'Volkswagen Gol', 'GHI9012', 100),
+(44,'Hyundai HB20', 'JKL3456', 135),
+(55,'Toyota Corolla', 'MNO7890', 220),
+(66,'Jeep Renegade', 'PQR1234', 250),
+(77,'Honda Civic', 'STU5678', 230),
+(88,'Fiat Mobi', 'VWX9012', 90),
+(99,'Renault Kwid', 'YZA3456', 95),
+(100,'Volkswagen Fusca', 'BCD7890', 50);
+
+
+INSERT INTO locacoes
+(id, cliente_id, veiculo_id, data_retirada, data_devolucao, valor_total)
+VALUES
+(1, 1, 11, '2026-10-01', '2026-10-03', 240),
+(2, 2, 22, '2026-10-02', '2026-10-05', 420),
+(3, 3, 33, '2026-10-03', '2026-10-06', 300),
+(4, 4, 44, '2026-10-04', '2026-10-07', 405),
+(5, 5, 55, '2026-10-05', '2026-10-08', 660),
+(6, 6, 66, '2026-10-06', '2026-10-08', 500),
+(7, 7, 77, '2026-10-07', '2026-10-10', 690),
+(8, 8, 88, '2026-10-08', '2026-10-11', 270),
+(9, 9, 99, '2026-10-09', '2026-10-12', 285),
+(10, 10, 100, '2026-10-10', '2026-10-12', 100),
+(11, 1, 33, '2026-10-13', '2026-10-15', 200),
+(12, 2, 55, '2026-10-14', '2026-10-16', 440;
+
+
+select * from clientes
+
+select * from veiculos
+
+select * from locacoes
+
+
+INSERT INTO locacoes
+(id,cliente_id, veiculo_id, data_retirada, data_devolucao, valor_total)
+VALUES
+(2,99, 1, '2026-10-15', '2026-10-17', 240);
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
